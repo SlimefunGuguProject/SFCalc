@@ -14,7 +14,7 @@ import javax.annotation.ParametersAreNonnullByDefault;
 public class WebsiteCommand extends SubCommand {
 
     public WebsiteCommand() {
-        super("website", "Gives the SFCalc website", false);
+        super("website", "查看SfCalc在线网站", false);
     }
 
     @Override
@@ -26,7 +26,7 @@ public class WebsiteCommand extends SubCommand {
                 p.spigot().sendMessage(new ComponentBuilder()
                     .color(ChatColor.YELLOW)
                     .event(event)
-                    .append("Click to go to the SFCalc website")
+                    .append("点击前往网页版SfCalc")
                     .create()
                 );
             } else {

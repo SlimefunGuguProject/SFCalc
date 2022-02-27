@@ -21,7 +21,7 @@ public class NeededCommand extends SubCommand {
     private final SFCalc plugin;
 
     public NeededCommand(SFCalc pl) {
-        super("needed", "Tells you how much more resources are needed", false);
+        super("needed", "计算还需要多少材料", false);
         this.plugin = pl;
     }
 

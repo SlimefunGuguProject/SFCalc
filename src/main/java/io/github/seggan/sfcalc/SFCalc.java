@@ -4,6 +4,7 @@ import io.github.mooy1.infinitylib.core.AbstractAddon;
 import io.github.seggan.errorreporter.ErrorReporter;
 import io.github.thebusybiscuit.slimefun4.api.recipes.RecipeType;
 import io.github.thebusybiscuit.slimefun4.implementation.Slimefun;
+import net.guizhanss.guizhanlib.updater.GuizhanBuildsUpdater;
 import org.bukkit.event.Listener;
 
 import lombok.Getter;
@@ -23,12 +24,17 @@ public class SFCalc extends AbstractAddon implements Listener {
     private StringRegistry stringRegistry;
 
     public SFCalc() {
-        super("Seggan", "SFCalc", "master", "auto-updates");
+        super("ybw0014", "SFCalc", "master", "auto-updates");
     }
 
     @Override
     protected void enable() {
         instance = this;
+
+        if (getConfig().getBoolean("auto-updates") &&
+            getDescription().getVersion().startsWith("Build")) {
+            new GuizhanBuildsUpdater(this, getFile(), "ybw0014", "SfCalc", "master", false).start();
+        }
 
         REPORTER  = new ErrorReporter("Seggan", "SFCalc", () ->
             "SFCalc " +

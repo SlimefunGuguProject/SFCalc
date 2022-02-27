@@ -20,7 +20,7 @@ public class CalcCommand extends SubCommand {
     private final SFCalc plugin;
 
     public CalcCommand(SFCalc pl) {
-        super("calc", "Calculates the resources needed for a given item", false);
+        super("calc", "计算制作某个物品需要多少资源", false);
         this.plugin = pl;
     }
 

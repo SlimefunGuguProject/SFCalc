@@ -2,7 +2,7 @@ package io.github.seggan.sfcalc;
 
 import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItem;
 import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItemStack;
-import io.github.thebusybiscuit.slimefun4.libraries.dough.items.ItemUtils;
+import net.guizhanss.guizhanlib.minecraft.helper.inventory.ItemStackHelper;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.command.CommandSender;
@@ -171,6 +171,6 @@ public class Calculator {
 
     @Nonnull
     private String getBasicName(ItemStack stack) {
-        return ChatColor.stripColor(ItemUtils.getItemName(stack));
+        return ChatColor.stripColor(ItemStackHelper.getDisplayName(stack));
     }
 }
