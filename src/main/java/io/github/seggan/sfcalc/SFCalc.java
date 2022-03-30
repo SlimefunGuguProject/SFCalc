@@ -33,7 +33,7 @@ public class SFCalc extends AbstractAddon implements Listener {
 
         if (getConfig().getBoolean("auto-updates") &&
             getDescription().getVersion().startsWith("Build")) {
-            new GuizhanBuildsUpdater(this, getFile(), "ybw0014", "SfCalc", "master", false).start();
+            new GuizhanBuildsUpdater(this, getFile(), "ybw0014", "SFCalc", "master", false).start();
         }
 
         REPORTER  = new ErrorReporter("Seggan", "SFCalc", () ->
