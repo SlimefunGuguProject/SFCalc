@@ -74,7 +74,9 @@ public class CalcCommand implements TabExecutor {
         SFCalc.REPORTER.executeOrElseReport(() -> {
             if (ids.isEmpty()) {
                 for (SlimefunItem item : Slimefun.getRegistry().getEnabledSlimefunItems()) {
-                    ids.add(item.getId().toLowerCase(Locale.ROOT));
+                    if (!item.isHidden()) {
+                        ids.add(item.getId().toLowerCase(Locale.ROOT));
+                    }
                 }
             }
 
